@@ -1,14 +1,20 @@
-import React from 'react';
-import styles from './App.module.css';
-import { mapBox } from './tools/apiMapBox';
+import React, { useEffect } from 'react';
+import { Home } from './Pages/Home';
+//import styles from './App.module.css';
 
 function App() {
-  console.log(mapBox)
-  return (
-    <div className={styles.pageMap}>
-      <h1>Nois</h1>
-    </div>
-  );
+  useEffect(() => {
+    getContent();
+  }, []);
+
+  const getContent = async () => {
+    const response = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
+    const data = await response.json();
+    console.log(data)
+  }
+
+
+  return <Home />
 }
 
 export default App;
