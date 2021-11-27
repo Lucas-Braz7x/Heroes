@@ -4,7 +4,7 @@ export const Container = styled.aside`
   width: 100%;
   height: 100vh;
   background: rgba(0,0,0,.4);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 `
